@@ -1,0 +1,69 @@
+:github-readme: ../README.adoc
+
+include::{github-readme}[tags=vardef]
+
+:projectpage: https://github.com/{gh-repo-owner}/{gh-repo-name}
+
+include::{github-readme}[tags=header]
+
+== URLs
+
+* link:{homepage}[Project home] (this page)
+* link:{projectpage}[GitHub project]
+* link:{issues}[Issue tracker]
+
+TIP: Do you want to improve this page? Please git-link:self[edit it on GitHub, edit].
+
+include::{github-readme}[tags=description]
+
+The original work comes from the Postman collection from the link:https://github.com/fbsamples/WhatsApp-Business-API-Postman-Collection[WhatsApp Business API - Postman Collection] project.
+The initial conversion to OpenAPI was made with the link:https://www.apimatic.io/transformer[apimatic] online tool.
+The spec was then reworked using link:https://www.apicur.io/[Apicurio Studio] and link:https://github.com/RepreZen/KaiZen-OpenAPI-Editor[KaiZen OpenAPI Editor for Eclipse].
+
+The style and the OpenAPI extensions used in the project are compatible with link:https://openapi-generator.tech/[OpenAPI Generator].
+
+== Source Code
+
+The OpenAPI specification can be found on GitHub: git-link:openapi.yaml[`openapi.yaml`].
+
+Documentation can be found in the git-link:docs/[`docs/`] folder.
+
+=== Build
+
+This project is using gradle (to build the documentation page).
+
+Command to build the documentation page:
+
+----
+./gradlew asciidoctor
+----
+
+The output of this command is an HTML page located at `<git repo root>/build/docs/html5/index.html`.
+
+==== For project maintainers
+
+Command to upload the documentation page on GitHub pages:
+
+----
+./gradlew gitPublishPush
+----
+
+==== Using ssh-agent
+
+Some tasks requires pushing into the distant git repository (release task or updating the `gh-pages` branch).
+If they are failing with errors like this:
+----
+org.eclipse.jgit.api.errors.TransportException: ... Permission denied (publickey).
+---- 
+
+Then `ssh-agent` can be used.
+----
+eval `ssh-agent -s`
+ssh-add ~/.ssh/id_rsa
+----
+(link:https://superuser.com/a/990447/[source] for this approach)
+
+include::{github-readme}[tags=contact-section]
+
+include::{github-readme}[tags=license-section]
+
