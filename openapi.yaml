@@ -3122,6 +3122,10 @@ components:
                     type: array
                     items:
                         $ref: '#/components/schemas/Webhook-Message'
+                statuses:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Webhook-Status'
                 errors:
                     type: array
                     items:
