@@ -3261,7 +3261,7 @@ components:
             default: text
             enum:
                 - audio
-                - contact
+                - contacts
                 - document
                 - hsm
                 - image
