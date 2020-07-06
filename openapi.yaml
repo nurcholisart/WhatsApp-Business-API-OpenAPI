@@ -3207,6 +3207,10 @@ components:
                         $ref: '#/components/schemas/Error'
                 audio:
                     $ref: '#/components/schemas/Webhook-Audio'
+                contacts:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Contact'
                 document:
                     $ref: '#/components/schemas/Webhook-Document'
                 image:
@@ -3261,7 +3265,7 @@ components:
             default: text
             enum:
                 - audio
-                - contact
+                - contacts
                 - document
                 - hsm
                 - image
